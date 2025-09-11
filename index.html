@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trident Club</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Announcement Banner -->
+  <div class="announcement" id="announcement">
+    <span>🚀 New Challenge drops this Sunday!</span>
+    <button onclick="dismissBanner()">×</button>
+  </div>
+
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Trident Club</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="challenges.html">Challenges</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="ambassadors.html">Ambassadors</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </nav>
+  </header>
+
+  <!-- Hero / Welcome Section -->
+  <section class="hero">
+    <h1>Welcome to Trident Club</h1>
+    <p>The gamified money club for students & young people.</p>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+              title="Intro Video" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="quick-links">
+    <h2>Explore</h2>
+    <div class="link-grid">
+      <a href="challenges.html" class="card">⚡ Challenges</a>
+      <a href="leaderboard.html" class="card">🏆 Leaderboard</a>
+      <a href="community.html" class="card">💬 Community</a>
+      <a href="opportunities.html" class="card">📈 Opportunities</a>
+      <a href="ambassadors.html" class="card">🤝 Ambassadors</a>
+      <a href="about.html" class="card">ℹ️ About Us</a>
+    </div>
+  </section>
+
+  <!-- Announcements -->
+  <section class="announcements content">
+    <h2>📢 Latest Announcements</h2>
+    <ul>
+      <li>🚀 New Challenge drops + date and time</li>
+      <li>🏆 Monthly winner will be announced + date and time</li>
+      <li>💬 Join the Discord for exclusive opportunities.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Trident Club | <a href="mailto:contact@tridentclub.com">Contact Us</a></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

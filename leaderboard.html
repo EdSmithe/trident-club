@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard | Trident Club</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Trident Club</div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="challenges.html">Challenges</a></li>
+        <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+        <li><a href="community.html">Community</a></li>
+        <li><a href="opportunities.html">Opportunities</a></li>
+        <li><a href="ambassadors.html">Ambassadors</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Leaderboard</h1>
+    <table class="leaderboard">
+      <thead>
+        <tr><th>Rank</th><th>Name</th><th>XP</th><th>Badge</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Alice</td><td>500</td><td>🥇 Gold</td></tr>
+        <tr><td>2</td><td>Bob</td><td>350</td><td>🥈 Silver</td></tr>
+        <tr><td>3</td><td>Charlie</td><td>220</td><td>🥉 Bronze</td></tr>
+      </tbody>
+    </table>
+
+    <section>
+      <h2>Monthly Winner</h2>
+      <p>🏆 Alice - 500 XP</p>
+    </section>
+
+    <section class="tracker">
+      <h2>Your XP Progress</h2>
+      <div class="progress-bar">
+        <div class="progress-fill" style="width: 65%;">65%</div>
+      </div>
+      <p>Badge: 🥈 Silver</p>
+    </section>
+
+
+  </main>
+
+  <footer>
+    <p>© 2025 Trident Club</p>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
