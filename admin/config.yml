@@ -1,52 +1,41 @@
 backend:
   name: git-gateway
-  branch: main   # change to your default branch if not 'main'
+  branch: main
 
-media_folder: "assets/uploads"   # where uploaded images/files are stored in repo
-public_folder: "/assets/uploads" # path used in the frontend
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
-# Define the editable content
 collections:
-  # Announcements
-  - name: "announcements"
-    label: "Announcements"
-    folder: "content/announcements"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "date", label: "Date", widget: "datetime" }
-      - { name: "body", label: "Body", widget: "markdown" }
-
-  # Links (for menus, resources, etc.)
-  - name: "links"
-    label: "Links"
-    folder: "content/links"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "label", label: "Label", widget: "string" }
-      - { name: "url", label: "URL", widget: "string" }
-      - { name: "description", label: "Description", widget: "text", required: false }
-
-  # Editable site text sections (homepage, about, footer, etc.)
-  - name: "pages"
-    label: "Site Pages"
+  # Banner
+  - name: "banner"
+    label: "Banner"
     files:
-      - file: "content/home.md"
-        label: "Home Page"
+      - file: "content/banner.json"
+        label: "Announcement Banner"
+        name: "banner"
+        fields:
+          - { name: "message", label: "Message", widget: "string" }
+
+  # Homepage
+  - name: "home"
+    label: "Homepage"
+    files:
+      - file: "content/home.json"
+        label: "Home Content"
         name: "home"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "intro", label: "Intro Text", widget: "markdown" }
-      - file: "content/about.md"
-        label: "About Page"
-        name: "about"
+          - { name: "title", label: "Hero Title", widget: "string" }
+          - { name: "intro", label: "Intro Text", widget: "text" }
+          - { name: "video", label: "YouTube Video URL", widget: "string" }
+
+  # Announcements (stored in JSON list)
+  - name: "announcements"
+    label: "Announcements"
+    file: "content/announcements.json"
+    fields:
+      - label: "Items"
+        name: "items"
+        widget: "list"
         fields:
           - { name: "title", label: "Title", widget: "string" }
-          - { name: "body", label: "Body", widget: "markdown" }
-      - file: "content/footer.md"
-        label: "Footer"
-        name: "footer"
-        fields:
-          - { name: "text", label: "Footer Text", widget: "markdown" }
+          - { name: "date", label: "Date", widget: "datetime" }
