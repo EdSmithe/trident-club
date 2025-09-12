@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-username/trident-club
+  repo: EdSmithe/trident-club
   branch: main
 
 media_folder: "assets/uploads"
