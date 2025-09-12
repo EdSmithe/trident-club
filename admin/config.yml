@@ -1,9 +1,9 @@
+local_backend: true
+
 backend:
   name: github
   repo: EdSmithe/trident-club   # replace with your repo
   branch: main
-  auth_scope: repo
-  base_url: https://api.netlify.com   # Netlify will handle the OAuth flow
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
