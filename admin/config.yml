@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: EdSmithe/trident-club.git  # replace with your GitHub repo
   branch: main
 
 media_folder: "assets/uploads"
