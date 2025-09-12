@@ -1,13 +1,12 @@
 backend:
   name: github
-  repo: EdSmithe/trident-club # replace with your GitHub repo
+  repo: your-username/trident-club
   branch: main
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-  # Banner
   - name: "banner"
     label: "Banner"
     files:
@@ -15,28 +14,27 @@ collections:
         label: "Announcement Banner"
         name: "banner"
         fields:
-          - { name: "message", label: "Message", widget: "string" }
+          - { label: "Message", name: "message", widget: "string" }
 
-  # Homepage
   - name: "home"
     label: "Homepage"
     files:
       - file: "content/home.json"
-        label: "Home Content"
+        label: "Homepage Content"
         name: "home"
         fields:
-          - { name: "title", label: "Hero Title", widget: "string" }
-          - { name: "intro", label: "Intro Text", widget: "text" }
-          - { name: "video", label: "YouTube Video URL", widget: "string" }
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
 
-  # Announcements (stored in JSON list)
   - name: "announcements"
     label: "Announcements"
-    file: "content/announcements.json"
-    fields:
-      - label: "Items"
-        name: "items"
-        widget: "list"
+    files:
+      - file: "content/announcements.json"
+        label: "Announcements List"
+        name: "announcements"
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "date", label: "Date", widget: "datetime" }
+          - label: "Announcements"
+            name: "items"
+            widget: "list"
+            field: { label: "Announcement", name: "text", widget: "string" }

@@ -1,5 +1,0 @@
----
-title: "Welcome to Trident Club"
-intro: "The gamified money club for students & young people."
-video: "https://www.youtube.com/embed/VIDEO_ID"
----

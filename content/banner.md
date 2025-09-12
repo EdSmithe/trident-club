@@ -1,3 +1,0 @@
----
-message: "🚀 New Challenge drops this Sunday!"
----
