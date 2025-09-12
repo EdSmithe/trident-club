@@ -9,10 +9,6 @@ function dismissBanner() {
   document.getElementById('announcement').style.display = 'none';
 }
 
-// Placeholder for future features (leaderboard, XP, etc.)
-console.log("Trident Club site loaded.");
-
-
 // Simple YAML frontmatter parser
 function parseFrontmatter(mdText) {
   const match = /^---\n([\s\S]*?)\n---/.exec(mdText);
