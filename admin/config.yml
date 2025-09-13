@@ -39,7 +39,5 @@ collections:
           - label: "Announcements"
             name: "items"
             widget: "list"
-            field:
-              label: "Announcement"
-              name: "text"
-              widget: "string"
+            fields:
+              - { label: "Announcement", name: "text", widget: "string" }

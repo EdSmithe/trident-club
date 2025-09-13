@@ -45,7 +45,8 @@ async function loadAnnouncements() {
 
     data.items.forEach(item => {
       const li = document.createElement("li");
-      li.textContent = item.text;
+      // Handle both string items and object items
+      li.textContent = typeof item === "string" ? item : item.text;
       list.appendChild(li);
     });
   } catch (err) {
