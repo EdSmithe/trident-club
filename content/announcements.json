@@ -1,7 +1,11 @@
 {
   "items": [
-    { "text": "🚀 New Challenge drops + date and time" },
-    { "text": "🏆 Monthly winner will be announced + date and time" },
-    { "text": "💬 Join the Discord for exclusive opportunities." }
+    "🚀 New Challenge drops + date and time coming soon!",
+    {
+      "text": "🏆 Monthly winner will be announced + date and time"
+    },
+    {
+      "text": "💬 Join the Discord for exclusive opportunities."
+    }
   ]
 }
