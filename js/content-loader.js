@@ -23,9 +23,11 @@ async function loadHomeContent() {
     const heroIntro = document.querySelector(".hero p");
     const heroVideo = document.querySelector(".hero iframe");
 
-    if (data.title) heroTitle.textContent = data.title;
-    if (data.intro) heroIntro.textContent = data.intro;
-    if (data.video) heroVideo.src = data.video;
+    if (data.hero_title) heroTitle.textContent = data.hero_title;
+    if (data.hero_subtitle) heroIntro.textContent = data.hero_subtitle;
+    if (data.youtube_id) {
+      heroVideo.src = `https://www.youtube.com/embed/${data.youtube_id}`;
+    }
   } catch (err) {
     console.error("Home content load failed:", err);
   }
@@ -43,7 +45,7 @@ async function loadAnnouncements() {
 
     data.items.forEach(item => {
       const li = document.createElement("li");
-      li.textContent = item.title;
+      li.textContent = item.text;
       list.appendChild(li);
     });
   } catch (err) {
