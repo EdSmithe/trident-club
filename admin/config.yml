@@ -23,3 +23,23 @@ collections:
       - file: "content/home.json"
         label: "Homepage Content"
         name: "home"
+        fields:
+          - { label: "Hero Title", name: "hero_title", widget: "string" }
+          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
+          - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
+
+  - name: "announcements"
+    label: "Announcements"
+    roles: ["Admin", "Editor"]
+    files:
+      - file: "content/announcements.json"
+        label: "Announcements List"
+        name: "announcements"
+        fields:
+          - label: "Announcements"
+            name: "items"
+            widget: "list"
+            field:
+              label: "Announcement"
+              name: "text"
+              widget: "string"
