@@ -1,9 +1,8 @@
-local_backend: true
-
 backend:
   name: github
-  repo: EdSmithe/trident-club   # replace with your repo
+  repo: EdSmithe/trident-club
   branch: main
+  base_url: https://tridentclub.co.uk
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
