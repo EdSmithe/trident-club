@@ -8,6 +8,7 @@ public_folder: "/assets/uploads"
 collections:
   - name: "banner"
     label: "Banner"
+    roles: ["Admin", "Editor"]
     files:
       - file: "content/banner.json"
         label: "Announcement Banner"
@@ -17,23 +18,8 @@ collections:
 
   - name: "home"
     label: "Homepage"
+    roles: ["Admin", "Editor"]
     files:
       - file: "content/home.json"
         label: "Homepage Content"
         name: "home"
-        fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Subtitle", name: "hero_subtitle", widget: "string" }
-          - { label: "YouTube Video ID", name: "youtube_id", widget: "string" }
-
-  - name: "announcements"
-    label: "Announcements"
-    files:
-      - file: "content/announcements.json"
-        label: "Announcements List"
-        name: "announcements"
-        fields:
-          - label: "Announcements"
-            name: "items"
-            widget: "list"
-            field: { label: "Announcement", name: "text", widget: "string" }
