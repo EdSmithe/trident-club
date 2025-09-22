@@ -128,12 +128,14 @@ header {
 }
 
 .nav-toggle {
-  display: none;
+  display: none; /* will show on mobile only */
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  position: relative;
+  z-index: 2000; /* ensures it's above nav */
 }
 
 /* -------- Mobile View -------- */
@@ -147,24 +149,25 @@ header {
     margin: 0 auto;
     font-size: 1.8rem;
   }
+  
+  .nav-toggle {
+    display: block;
+  }
 
   .nav-links {
     display: none;
     flex-direction: column;
+    background: #14141f;
+    position: absolute;
+    top: 70px;
+    left: 0;
     width: 100%;
-    margin-top: 1rem;
-    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid #323232;
   }
 
   .nav-links.show {
     display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-    order: 2;
-    margin-left: auto;
-    font-size: 2rem;
   }
 }
 
@@ -328,6 +331,35 @@ footer {
   color: white;
   padding: 1.5rem;
   border-radius: 10px;
+}
+
+/* ✅ Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;   /* stack instead of side-by-side */
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    width: 100%;
+  }
+
+  .contact-info h2,
+  .contact-form h2 {
+    font-size: 1.2rem; /* slightly smaller for mobile */
+  }
+
+  input, textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .contact-btn {
+    width: 100%; /* full width button on mobile */
+    text-align: center;
+  }
 }
 
 .contact-info h2 {
