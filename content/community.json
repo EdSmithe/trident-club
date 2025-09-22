@@ -1,0 +1,14 @@
+{
+  "title": "Community",
+  "intro": "Join the discussion and connect with fellow members!",
+  "discord": {
+    "server_id": "YOUR_SERVER_ID",
+    "theme": "dark",
+    "width": 350,
+    "height": 500
+  },
+  "highlights": [
+    "🎉 John completed 5 challenges!",
+    "🔥 Sarah flipped her first car with a profit!"
+  ]
+}

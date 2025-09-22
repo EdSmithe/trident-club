@@ -24,27 +24,34 @@
   </header>
 
   <main class="content">
-    <h1>Ambassador Program</h1>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
-            title="Ambassador Explainer" frameborder="0" allowfullscreen></iframe>
+    <!-- Page title -->
+    <h1 class="ambassadors-title">Ambassador Program</h1>
 
-    <section>
+    <!-- Intro text -->
+    <p class="intro"></p>
+
+    <!-- Videos will be injected here -->
+    <div class="videos"></div>
+
+    <!-- Application form (static, not CMS-driven) -->
+    <section class="apply">
       <h2>Apply Now</h2>
       <form>
-        <label>Name</label><br/>
-        <input type="text" required><br/>
-        <label>Email</label><br/>
-        <input type="email" required><br/>
-        <label>Why do you want to join?</label><br/>
-        <textarea rows="4"></textarea><br/>
-        <button class="btn">Submit</button>
+        <label for="name">Name</label><br/>
+        <input type="text" id="name" required><br/>
+        <label for="email">Email</label><br/>
+        <input type="email" id="email" required><br/>
+        <label for="reason">Why do you want to join?</label><br/>
+        <textarea id="reason" rows="4"></textarea><br/>
+        <button class="btn" type="submit">Submit</button>
       </form>
     </section>
 
-    <section>
-      <h2>Commission Structure</h2>
-      <p>💷 £100 per signup to start.</p>
-      <!-- You can later replace this with an infographic image -->
+    <!-- Commission structure -->
+    <section class="commission">
+      <h2 class="commission-title">Commission Structure</h2>
+      <p class="commission-text">💷 £100 per signup to start.</p>
+      <!-- Could later add an <img> dynamically -->
     </section>
   </main>
 
@@ -52,5 +59,6 @@
     <p>© 2025 Trident Club</p>
   </footer>
   <script src="js/main.js"></script>
+  <script src="js/content-loader.js"></script>
 </body>
 </html>

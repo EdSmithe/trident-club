@@ -1,0 +1,16 @@
+{
+  "title": "Weekly Challenge",
+  "challenge": {
+    "title": "Flip a £10 into £100",
+    "steps": [
+      "Find a small item to flip",
+      "Sell it for profit",
+      "Document your journey"
+    ],
+    "button_text": "Submit Proof"
+  },
+  "progress": {
+    "xp_percent": 65,
+    "badge": "🥈 Silver"
+  }
+}
