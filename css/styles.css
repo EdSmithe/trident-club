@@ -127,21 +127,23 @@ header {
   background: #1f1f2e;
 }
 
+/* Hide hamburger by default (desktop) */
 .nav-toggle {
-  display: none; /* will show on mobile only */
+  display: none;
+  position: relative;
+  z-index: 2000;   /* keep above menus */
   background: none;
   border: none;
   color: white;
   font-size: 1.8rem;
   cursor: pointer;
-  position: relative;
-  z-index: 2000; /* ensures it's above nav */
 }
 
 /* -------- Mobile View -------- */
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
+    position: relative; /* so absolute children are placed correctly */
   }
 
   .logo {
@@ -151,7 +153,8 @@ header {
   }
   
   .nav-toggle {
-    display: block;
+    display: block;   /* show on mobile only */
+    order: 2;         /* make sure it doesn’t get pushed under */
   }
 
   .nav-links {
@@ -164,6 +167,7 @@ header {
     width: 100%;
     padding: 1rem;
     border-top: 2px solid #323232;
+    z-index: 1500;    /* below hamburger */
   }
 
   .nav-links.show {
