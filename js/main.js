@@ -1,7 +1,6 @@
-// Toggle navigation menu (mobile)
 function toggleNav() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('active');
+  const navLinks = document.getElementById("navLinks");
+  navLinks.classList.toggle("show");
 }
 
 // Dismiss announcement banner

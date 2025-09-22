@@ -289,6 +289,30 @@ async function loadChallengesContent() {
   }
 }
 
+async function loadContactContent() {
+  try {
+    const res = await fetch("/content/contact.json");
+    if (!res.ok) return;
+    const data = await res.json();
+
+    document.querySelector(".contact-info h2").textContent = data.title;
+    
+    const infoBlocks = document.querySelectorAll(".contact-info p");
+    infoBlocks[0].innerHTML = `<strong>${data.phone_label}</strong>${data.phone_number}`;
+    infoBlocks[1].innerHTML = `<strong>${data.email_label}</strong><a href="mailto:${data.email_address}">${data.email_address}</a>`;
+    infoBlocks[2].innerHTML = `<strong>${data.location_label}</strong>${data.location_text}`;
+    infoBlocks[3].innerHTML = `<strong>${data.hours_label}</strong>${data.hours_text}`;
+
+    // Update socials if available
+    if (data.socials) {
+      if (data.socials.facebook) document.querySelector(".social-facebook").href = data.socials.facebook;
+      if (data.socials.instagram) document.querySelector(".social-instagram").href = data.socials.instagram;
+      if (data.socials.linkedin) document.querySelector(".social-linkedin").href = data.socials.linkedin;
+    }
+  } catch (err) {
+    console.error("Contact content load failed:", err);
+  }
+}
 
 async function initContent() {
   await loadBanner();
@@ -316,7 +340,11 @@ async function initContent() {
 
   if (document.title.includes("Challenges")) {
     await loadChallengesContent();
-}
+  }
+  
+  if (document.title.includes("Contact")) {
+    await loadContactContent();
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initContent);

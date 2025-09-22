@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trident Club</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/trident-icon.png">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -17,19 +18,27 @@
   <!-- Header / Navbar -->
   <header>
     <nav class="navbar">
-      <div class="logo">Trident Club</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
+      <ul class="nav-links left">
         <li><a href="challenges.html">Challenges</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
         <li><a href="community.html">Community</a></li>
+      </ul>
+
+      <a href="index.html" class="logo">
+        Trident Club
+      </a>
+
+      <ul class="nav-links right">
         <li><a href="opportunities.html">Opportunities</a></li>
         <li><a href="ambassadors.html">Ambassadors</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active contact-link">Contact</a></li>
       </ul>
+
       <button class="nav-toggle" onclick="toggleNav()">☰</button>
     </nav>
   </header>
+
 
   <!-- Hero / Welcome Section -->
   <section class="hero">
@@ -66,7 +75,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Trident Club | <a href="mailto:contact@tridentclub.com">Contact Us</a></p>
+    <p>© 2025 Trident Club | <a href="contact.html">Contact Us</a></p>
   </footer>
 
   <script src="js/main.js"></script>

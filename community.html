@@ -5,20 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Community | Trident Club</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/trident-icon.png">
 </head>
 <body>
+  <div class="announcement" id="announcement">
+    <span>🚀 New Challenge drops this Sunday!</span>
+    <button onclick="dismissBanner()">×</button>
+  </div>
+
   <header>
     <nav class="navbar">
-      <div class="logo">Trident Club</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
+      <ul class="nav-links left">
         <li><a href="challenges.html">Challenges</a></li>
         <li><a href="leaderboard.html">Leaderboard</a></li>
-        <li><a href="community.html" class="active">Community</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+
+      <a href="index.html" class="logo">
+        Trident Club
+      </a>
+
+      <ul class="nav-links right">
         <li><a href="opportunities.html">Opportunities</a></li>
         <li><a href="ambassadors.html">Ambassadors</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active contact-link">Contact</a></li>
       </ul>
+
       <button class="nav-toggle" onclick="toggleNav()">☰</button>
     </nav>
   </header>
@@ -36,7 +49,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Trident Club</p>
+    <p>© 2025 Trident Club | <a href="contact.html">Contact Us</a></p>
   </footer>
   <script src="js/main.js"></script>
   <script src="js/content-loader.js"></script>

@@ -1,0 +1,16 @@
+{
+  "title": "Contact Information",
+  "phone_label": "Phone",
+  "phone_number": "+44 ...",
+  "email_label": "Email",
+  "email_address": "contact@tridentclub.com",
+  "location_label": "Location",
+  "location_text": "Sherborne, UK",
+  "hours_label": "Hours",
+  "hours_text": "Available: 7 days a week, whenever needed. We're committed to supporting you anytime.",
+  "socials": {
+    "facebook": "https://facebook.com/tridentclub",
+    "instagram": "https://instagram.com/tridentclub",
+    "linkedin": "https://linkedin.com/company/tridentclub"
+  }
+}

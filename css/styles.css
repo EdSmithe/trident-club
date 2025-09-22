@@ -1,6 +1,7 @@
 /* Import a modern clean font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Prosto+One&display=swap');
 /* Global Reset & Typography */
 * {
   margin: 0;
@@ -9,13 +10,16 @@
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Prosto One', sans-serif;
   background-color: #0f0f17;
   color: #f5f5f5;
   line-height: 1.6;
+  font-size: 18px;
+  font-weight: 800;
 }
 
 h1, h2, h3 {
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
@@ -82,34 +86,47 @@ a:hover {
 /* Navbar */
 header {
   background: #14141f;
-  border-bottom: 1px solid #222;
+  border-bottom: 2px solid #323232;
 }
+
 .navbar {
   max-width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0.75rem 1rem;
 }
+
 .logo {
-  font-weight: 700;
-  font-size: 1.3rem;
+  font-family: 'Monoton', cursive;
+  font-weight: 400;
+  font-size: 2.4rem;   /* smaller than before */
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0.5rem;
 }
+
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1rem;
+  gap: 0.4rem;      /* slightly tighter spacing */
 }
+
 .nav-links li a {
-  padding: 0.5rem 0.75rem;
+  font-size: 1rem;   /* smaller font so it all fits */
+  padding: 0.2rem 0.6rem;
   border-radius: 6px;
   transition: background 0.2s;
 }
+
 .nav-links li a:hover,
 .nav-links li a.active {
   background: #1f1f2e;
 }
+
 .nav-toggle {
   display: none;
   background: none;
@@ -117,6 +134,38 @@ header {
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
+}
+
+/* -------- Mobile View -------- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    order: 1;
+    margin: 0 auto;
+    font-size: 1.8rem;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+    order: 2;
+    margin-left: auto;
+    font-size: 2rem;
+  }
 }
 
 /* Hero */
@@ -161,7 +210,7 @@ header {
 /* Buttons - more visible */
 .btn {
   display: inline-block;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  background: linear-gradient(90deg, #90e7ff, #0059c6);
   color: white;
   padding: 0.6rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.25); /* subtle visible border */
@@ -173,7 +222,7 @@ header {
 }
 .btn:hover {
   border-color: #00c6ff;
-  background: linear-gradient(90deg, #0072ff, #005bbb);
+  background: linear-gradient(90deg, #a0c8f8, #005bbb);
   transform: translateY(-2px);
 }
 
@@ -219,7 +268,7 @@ footer {
   background: #14141f;
   text-align: center;
   padding: 1rem;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   margin-top: 3rem;
   border-top: 1px solid #222;
 }
@@ -261,4 +310,105 @@ footer {
   line-height: 24px;
   border-radius: 8px 0 0 8px;
   transition: width 0.4s ease;
+}
+
+/* Contact Page Layout */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+/* Contact Info Section */
+.contact-info {
+  background: #14141f;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.contact-info h2 {
+  margin-bottom: 1.5rem;
+  color: #00aaff;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #323232;
+  padding-bottom: 0.5rem;
+}
+
+/* Each info block */
+.contact-info p {
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #323232;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.contact-info p strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.contact-info p:last-child {
+  border-bottom: none; /* remove border for last block */
+}
+
+.contact-form {
+  background: #1f1f2e;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.contact-form h2 {
+  margin-bottom: 1rem;
+  color: #00c6ff; /* your blue accent */
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #323232;
+  border-radius: 6px;
+  background: #0f0f16;
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-btn {
+  background: #ff6161;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-btn:hover {
+  background: #ff1313;
+}
+
+/* Navbar active state override for Contact */
+.nav-links li a.contact-link.active {
+  background: #ff6161;
+  color: white;
 }

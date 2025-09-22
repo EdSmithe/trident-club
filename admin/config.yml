@@ -146,3 +146,29 @@ collections:
           - { label: "Contact Title", name: "contact_title", widget: "string" }
           - { label: "Contact Text", name: "contact_text", widget: "text" }
           - { label: "Contact Email", name: "contact_email", widget: "string" }
+
+  - name: "contact"
+    label: "Contact Page"
+    roles: ["Admin", "Editor"]
+    files:
+      - file: "content/contact.json"
+        label: "Contact Page Content"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Phone Label", name: "phone_label", widget: "string" }
+          - { label: "Phone Number", name: "phone_number", widget: "string" }
+          - { label: "Email Label", name: "email_label", widget: "string" }
+          - { label: "Email Address", name: "email_address", widget: "string" }
+          - { label: "Location Label", name: "location_label", widget: "string" }
+          - { label: "Location Text", name: "location_text", widget: "string" }
+          - { label: "Hours Label", name: "hours_label", widget: "string" }
+          - { label: "Hours Text", name: "hours_text", widget: "text" }
+          - label: "Social Links"
+            name: "socials"
+            widget: "object"
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "LinkedIn", name: "linkedin", widget: "string", required: false }
+
