@@ -314,6 +314,39 @@ async function loadContactContent() {
   }
 }
 
+async function loadTestimonialsContent() {
+  try {
+    const res = await fetch("/content/testimonials.json");
+    if (!res.ok) return;
+    const data = await res.json();
+
+    // Update title + intro if present
+    const titleEl = document.querySelector(".testimonials-title");
+    const introEl = document.querySelector(".testimonials-intro");
+    if (titleEl && data.title) titleEl.textContent = data.title;
+    if (introEl && data.intro) introEl.textContent = data.intro;
+
+    // Build testimonial cards
+    const grid = document.getElementById("testimonials-grid");
+    if (grid) {
+      grid.innerHTML = (data.items || [])
+        .map(
+          (item) => `
+          <article class="testimonial">
+            <p class="quote">“${item.quote}”</p>
+            <div class="meta">
+              <span class="name">— ${item.name}</span>
+              ${item.tag ? `<span class="tag">${item.tag}</span>` : ""}
+            </div>
+          </article>`
+        )
+        .join("");
+    }
+  } catch (err) {
+    console.error("Testimonials content load failed:", err);
+  }
+}
+
 async function initContent() {
   await loadBanner();
 
@@ -344,6 +377,10 @@ async function initContent() {
   
   if (document.title.includes("Contact")) {
     await loadContactContent();
+  }
+
+  if (document.title.includes("Testimonials")) {
+    await loadTestimonialsContent();
   }
 }
 

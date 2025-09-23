@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials | Trident Club</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="shortcut icon" type="image/x-icon" href="images/trident-icon.png">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+
+      <div class="nav-links">
+        <ul class="nav-left">
+          <li><a href="challenges.html">Challenges</a></li>
+          <li><a href="leaderboard.html">Leaderboard</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+        </ul>
+
+        <a href="index.html" class="logo">TridentClub</a>
+
+        <ul class="nav-right">
+          <li><a href="opportunities.html">Opportunities</a></li>
+          <li><a href="ambassadors.html">Ambassadors</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active contact-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="content">
+    <h1>What Members Say</h1>
+    <p>Real stories from students and young people building skills and wins with Trident Club.</p>
+
+    <section class="testimonials-grid">
+      <article class="testimonial">
+        <p class="quote">“The weekly challenges gave me the push to flip my first item—made £85 profit!”</p>
+        <div class="meta">
+          <span class="name">— Sarah K.</span>
+          <span class="tag">First-time flipper</span>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <p class="quote">“The community feedback on my listings was 🔥. Learned how to write better posts that actually sell.”</p>
+        <div class="meta">
+          <span class="name">— Jamal R.</span>
+          <span class="tag">Marketplace seller</span>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <p class="quote">“I used the steps to turn £20 into £140 within two weeks. Clear, simple, doable.”</p>
+        <div class="meta">
+          <span class="name">— Priya M.</span>
+          <span class="tag">Challenge finisher</span>
+        </div>
+      </article>
+
+      <article class="testimonial">
+        <p class="quote">“Loved the bite-sized tasks. Perfect between classes.”</p>
+        <div class="meta">
+          <span class="name">— Alex T.</span>
+          <span class="tag">Student</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Trident Club | <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+  <script>
+    function toggleNav() {
+      const list = document.querySelector('.nav-links');
+      const btn  = document.querySelector('.nav-toggle');
+      const open = list.classList.toggle('show');
+      btn.setAttribute('aria-expanded', open);
+    }
+  </script>
+  <script src="js/content-loader.js"></script>
+</body>
+</html>

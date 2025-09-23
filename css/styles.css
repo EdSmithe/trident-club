@@ -89,106 +89,144 @@ header {
   border-bottom: 2px solid #323232;
 }
 
+/* ===== NAVBAR (Desktop) ===== */
 .navbar {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 1rem;
+  background: #14141f;
+  border-bottom: 2px solid #323232;
+  position: relative;
+  padding: 0.45rem 0.75rem;
 }
 
-.logo {
-  font-family: 'Monoton', cursive;
-  font-weight: 400;
-  font-size: 2.4rem;   /* smaller than before */
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  white-space: nowrap;
-  margin: 0.5rem;
-}
-
+/* Grid layout: left links | logo | right links */
 .nav-links {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: clamp(0.8rem, 2vw, 1.6rem);
   list-style: none;
-  display: flex;
-  gap: 0.4rem;      /* slightly tighter spacing */
+  margin: 0;
+  padding: 0;
+  color: #00c6ff;
 }
 
-.nav-links li a {
-  font-size: 1rem;   /* smaller font so it all fits */
-  padding: 0.2rem 0.6rem;
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-right {
+  justify-content: flex-end;
+}
+
+/* Link styling */
+.nav-left a,
+.nav-right a {
+  font-size: clamp(0.92rem, 0.95vw, 1rem);
+  padding: 0.25rem 0.4rem;
   border-radius: 6px;
+  color: #16c9ff;
+  text-decoration: none;
   transition: background 0.2s;
 }
 
-.nav-links li a:hover,
-.nav-links li a.active {
+.nav-left a:hover,
+.nav-right a:hover,
+.nav-links a.active {
   background: #1f1f2e;
 }
 
-/* Hide hamburger by default (desktop) */
-.nav-toggle {
-  display: none;
-  position: relative;
-  z-index: 2000;   /* keep above menus */
-  background: none;
-  border: none;
-  color: white;
-  font-size: 1.8rem;
-  cursor: pointer;
+/* Perfectly centered logo */
+.logo {
+  font-family: 'Monoton', sans-serif;
+  font-size: clamp(1.9rem, 2.5vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  justify-self: center;
 }
 
-/* -------- Mobile View -------- */
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap;
-    position: relative; /* so absolute children are placed correctly */
-  }
+/* Hamburger button (desktop hidden) */
+.nav-toggle {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 0.7rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 2000;
+}
 
-  .logo {
-    order: 1;
-    margin: 0 auto;
-    font-size: 1.8rem;
-  }
-  
+/* ===== NAVBAR (Mobile) ===== */
+@media (max-width: 768px) {
   .nav-toggle {
-    display: block;   /* show on mobile only */
-    order: 2;         /* make sure it doesn’t get pushed under */
+    display: block;
   }
 
   .nav-links {
     display: none;
-    flex-direction: column;
-    background: #14141f;
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
-    width: 100%;
-    padding: 1rem;
+    right: 0;
+    background: #14141f;
     border-top: 2px solid #323232;
-    z-index: 1500;    /* below hamburger */
+    padding: 1rem;
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
   }
 
   .nav-links.show {
-    display: flex;
+    display: grid;
+  }
+
+  /* stack links neatly */
+  .nav-left,
+  .nav-right {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+
+  /* logo at the top, centered */
+  .logo {
+    order: -1;
+    justify-self: center;
+    margin: 0.25rem 0 0.5rem;
   }
 }
+
 
 /* Hero */
 .hero {
   text-align: center;
   padding: 3rem 1rem;
 }
+
 .video-container {
-  margin: 1rem auto;
-  max-width: 560px;
-}
-.video-container iframe {
+  position: relative;
   width: 100%;
-  height: 315px;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 /* Quick Links */
@@ -339,6 +377,27 @@ footer {
 
 /* ✅ Mobile Responsive Adjustments */
 @media (max-width: 768px) {
+  body {
+    font-size: 16px;
+    font-weight: 600; /* a bit lighter */
+  }
+
+  h1 {
+    font-size: 1.6rem; /* down from 2rem+ */
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p, li, a {
+    font-size: 0.95rem;
+  }
+
+  .logo {
+    font-size: 1.6rem; /* shrink nav logo */
+  }
+
   .contact-container {
     grid-template-columns: 1fr;   /* stack instead of side-by-side */
     gap: 1rem;
@@ -433,8 +492,8 @@ textarea {
   background: #ff6161;
   color: white;
   border: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px !important;  /* force pill shape */
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -443,8 +502,60 @@ textarea {
   background: #ff1313;
 }
 
+.nav-links li a.contact-link {
+  border-radius: 9999px;  /* fully curved */
+  padding: 0.5rem 1.2rem; /* extra horizontal space helps pill shape */
+}
+
 /* Navbar active state override for Contact */
 .nav-links li a.contact-link.active {
   background: #ff6161;
   color: white;
+}
+
+/* Testimonials */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.testimonial {
+  background: #1f1f2e;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+}
+
+.testimonial .quote {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.testimonial .meta {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+  color: #cfd3dc;
+}
+
+.testimonial .meta .name {
+  font-weight: 700;
+  color: #fff;
+}
+
+.testimonial .meta .tag {
+  background: #14141f;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 9999px;
+  padding: 0.2rem 0.6rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
 }

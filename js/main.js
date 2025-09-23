@@ -1,9 +1,9 @@
-function toggleNav() {
-  document.querySelectorAll(".nav-links").forEach(nav => {
-    nav.classList.toggle("show");
-  });
-}
-
+  function toggleNav() {
+    const list = document.getElementById('primary-nav');
+    const btn  = document.querySelector('.nav-toggle');
+    const open = list.classList.toggle('show');
+    btn.setAttribute('aria-expanded', open);
+  }
 // Dismiss announcement banner
 function dismissBanner() {
   document.getElementById('announcement').style.display = 'none';

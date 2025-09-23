@@ -92,6 +92,24 @@ collections:
             widget: "list"
             field: { label: "Highlight", name: "highlight", widget: "string" }
 
+  - name: "testimonials"
+    label: "Testimonials Page"
+    roles: ["Admin", "Editor"]
+    files:
+      - file: "content/testimonials.json"
+        label: "Testimonials Page Content"
+        name: "testimonials"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - label: "Testimonials"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string", required: false }
+              - { label: "Quote", name: "quote", widget: "text" }
+
   - name: "opportunities"
     label: "Opportunities Page"
     roles: ["Admin", "Editor"]

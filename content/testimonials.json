@@ -1,0 +1,26 @@
+{
+  "title": "What Members Say",
+  "intro": "Real stories from students and young people building wins with Trident Club.",
+  "items": [
+    {
+      "name": "Sarah K.",
+      "tag": "First-time flipper",
+      "quote": "The weekly challenges gave me the push to flip my first item — made £85 profit!"
+    },
+    {
+      "name": "Jamal R.",
+      "tag": "Marketplace seller",
+      "quote": "The community feedback on my listings was 🔥. Learned how to write posts that actually sell."
+    },
+    {
+      "name": "Priya M.",
+      "tag": "Challenge finisher",
+      "quote": "I used the steps to turn £20 into £140 within two weeks. Clear, simple, doable."
+    },
+    {
+      "name": "Alex T.",
+      "tag": "Student",
+      "quote": "Loved the bite-sized tasks. Perfect between classes."
+    }
+  ]
+}
