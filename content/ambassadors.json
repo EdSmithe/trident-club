@@ -2,8 +2,10 @@
   "title": "Ambassador Program",
   "intro_text": "Meet our ambassadors and hear their stories.",
   "video_links": [
-    { "url": "https://www.youtube.com/embed/abc123xyz" },
-    { "url": "https://www.youtube.com/embed/def456uvw" }
+    "https://www.youtube.com/watch?v=mVD8XaRfs4c",
+    {
+      "url": "https://www.youtube.com/embed/def456uvw"
+    }
   ],
   "commission_title": "Commission Structure",
   "commission_text": "💷 £100 per signup to start.",
